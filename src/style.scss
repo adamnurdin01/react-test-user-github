@@ -1,0 +1,25 @@
+/*
+Variable
+=========================== */
+@import './assets/scss/variable';
+
+/*
+Dependencies
+=========================== */
+@import '~bootstrap-scss/bootstrap';
+
+/*
+Typography
+=========================== */
+@import './assets/scss/typography';
+
+/*
+General
+=========================== */
+@import './assets/scss/general';
+
+/*
+Component
+=========================== */
+@import './assets/scss/comonent/input-search';
+@import './assets/scss/comonent/loading-spinner';

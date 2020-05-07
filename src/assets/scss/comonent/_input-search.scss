@@ -1,0 +1,21 @@
+.input-search{
+    position: relative;
+    background-color: #f3f5f7;
+    display: flex;
+
+    .form-control{
+        padding: 20px;
+        border: solid 1px #efefef;
+        background-color: transparent;
+        box-shadow: none !important;
+        border: 0;
+    }
+
+    .icon{
+        color: $color-title;
+        position: relative;
+        margin-top: 8px;
+        margin-right: 20px;
+        margin-left: 15px;
+    }
+}

@@ -1,0 +1,64 @@
+
+/*
+Color
+=========================== */
+$color-title: #4f4f4f;
+$color-content: hsl(0, 0%, 60%);
+$color-primary: #e67e22;
+$color-primary2: #d35400;
+$body-bg: #f5f7f8;
+$color-danger: #e74c3c;
+$color-secondary: #34495e;
+$color-warning: #f1c40f;
+$color-success: #2ecc71;
+$color-info: #3498db;
+
+:root {
+    --color-primary: #e67e22;
+    --color-primary2: #d35400;
+    --color-text: #ffffff;
+}
+
+/*
+Break Responsive
+=========================== */
+$mobile-sm-screen: 480px;
+$mobile-screen: 767px;
+$ipad-sm-screen: 812px;
+$ipad-screen: 920px;
+
+/*
+Bootstrap Custom
+=========================== */
+$theme-colors: (
+    "primary": $color-primary,
+    "danger": $color-danger,
+    "secondary": $color-secondary,
+    "warning": $color-warning,
+    "success": $color-success,
+    "info": $color-info
+);
+
+/*
+General Extend
+=========================== */
+.animate {
+	transition: all 0.3s ease-in-out;
+}
+
+.removeScrollStyle{
+	overflow: -moz-scrollbars-none;
+	-ms-overflow-style: none !important;
+	scrollbar-width: none !important;
+	
+	&::-webkit-scrollbar { 
+        width: 0 !important;
+        height: 0 !important;
+    }
+}
+
+/*
+Font Family
+=========================== */
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700');
+$font-family: 'Open Sans', sans-serif;

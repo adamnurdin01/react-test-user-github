@@ -1,0 +1,164 @@
+/*
+Typography
+=========================== */
+html,
+body {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    overflow-x: hidden !important;
+    background-color: #edf0f4;
+    @extend .removeScrollStyle;
+}
+
+body {
+	color:$color-content;
+    font-family: $font-family;
+    font-size: 16px;
+    line-height: 20px;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 1;
+}
+
+
+a{
+	outline:0;
+    cursor: pointer;
+    color: var(--color-primary);
+    @include transition("all .5s ease-in-out");
+
+    &:focus{
+        outline: 0;
+    }
+
+    &:hover{
+        color: var(--color-primary);
+        text-decoration:underline;
+    }
+
+    &.link{
+        color: $color-content;
+        text-decoration: none;
+    }
+}
+
+h1{
+	color: $color-title;
+	margin: 0 0 15px 0;
+	font-size: 48px;
+    font-family: $font-family;
+    font-weight: 500;
+    line-height: 52px;
+    letter-spacing: .5px;
+    font-weight: 600;
+    text-transform: none !important;
+
+    small{
+        color: #bfbfbf;
+    }
+}
+
+h2{
+    @extend h1;
+	font-size:36px;
+	line-height:48px;
+}
+
+h3{
+    @extend h1;
+	font-size:30px;
+	line-height:36px;
+}
+
+h4{
+    @extend h1;
+	font-size:24px;
+	line-height:30px;
+}
+
+h5{
+    @extend h1;
+	font-size:18px;
+	line-height:24px;
+}
+
+h6{
+    @extend h1;
+	font-size:14px;
+	line-height:18px;
+}
+
+p{
+    margin-top: 0;
+    margin-bottom:20px;
+}
+
+label{
+    font-weight: 700;
+    color: $color-title;
+}
+
+strong{
+    color: $color-title;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: #cccccc;
+}
+::-moz-placeholder { /* Firefox 19+ */
+    color: #cccccc;
+}
+:-ms-input-placeholder { /* IE 10+ */
+    color: #cccccc;
+}
+:-moz-placeholder { /* Firefox 18- */
+    color: #cccccc;
+}
+
+/*
+Blockquote
+=========================== */
+blockquote{
+    display:block;
+    background: $color-title;
+    padding: 15px 20px 15px 45px;
+    margin: 0 0 20px;
+    position: relative;
+    
+    /*Font*/
+    font-family: Georgia, serif;
+    font-size: 14px;
+    line-height: 1.2;
+    color: #666;
+  
+    /*Borders - (Optional)*/
+    border-left-style: solid;
+    border-left-width: 15px;
+    border-right-style: solid;
+    border-right-width: 2px;    
+}
+
+input, textarea{
+    outline: 0;
+}
+  
+blockquote::before{
+    content: "\201C"; /*Unicode for Left Double Quote*/
+    /*Font*/
+    font-family: Georgia, serif;
+    font-size: 50px;
+    font-weight: bold;
+    color: #999;
+
+    /*Positioning*/
+    position: absolute;
+    left: 10px;
+    top:5px;
+}
+
+blockquote::after{
+    /*Reset to make sure*/
+    content: "";
+}
