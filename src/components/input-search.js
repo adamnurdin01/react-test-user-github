@@ -14,6 +14,12 @@ class InputSearch extends React.Component {
     
     componentDidMount(){
         feather.replace();    
+
+        let keyword = this.props.search.keyword;
+        if(this.props.search.keyword){
+            this.setState({keyword: keyword});
+            this.props.onChangeState(keyword);
+        }
     }
 
     // ======================== //
@@ -42,7 +48,7 @@ class InputSearch extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-        user: state.user
+        search: state.search
     }
 }
   

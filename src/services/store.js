@@ -1,6 +1,6 @@
 import { createStore, combineReducers } from 'redux';
 
-const userReducer = (state = {
+const searchReducer = (state = {
 	keyword: null
 }, action) => {
 	switch(action.type){
@@ -17,7 +17,7 @@ const userReducer = (state = {
 }
 
 const reducers = combineReducers({
-	user: userReducer
+	search: searchReducer
 });
 export const store = createStore(
 	reducers,

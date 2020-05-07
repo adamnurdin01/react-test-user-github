@@ -2,11 +2,13 @@ import React from 'react';
 import MainService from '../services/main.service';
 import { withRouter } from 'react-router-dom';
 import Spinner from './loading-spinner';
+import { connect } from 'react-redux';
 import { store } from '../services/store';
 import watch from 'redux-watch';
 
+let subscribe = null;
 class UserList extends React.Component {
-
+    
     constructor(props) {
         super(props);
         this.state = {
@@ -14,19 +16,37 @@ class UserList extends React.Component {
             loading: false,
             keyword: null,
         }
+    }
 
-        let w = watch(store.getState, 'user.keyword')
-        store.subscribe(w((newVal, oldVal, objectPath) => {
+    componentDidMount(){
+        // ========================== //
+        // Watch Change Keyword
+        // ========================== //
+        let w = watch(store.getState, 'search.keyword');
+        subscribe = store.subscribe(w((newVal) => {
             this.setState({
                 keyword: newVal
             },()=>{
                 this.fetchUserList();
             });
-        }))
+        }));
+
+        // ========================== //
+        // Init Fetch data
+        // ========================== //
+        let keyword = this.props.search.keyword;
+        if(this.props.search.keyword){
+            this.setState({keyword: keyword},()=>{
+                this.fetchUserList();
+            });
+        }else{
+            this.fetchUserList();
+        }
     }
 
-    componentDidMount(){
-        this.fetchUserList();
+    componentWillUnmount(){
+        subscribe();
+        this.setState({keyword:''});
     }
 
     // ======================== //
@@ -91,4 +111,17 @@ class UserList extends React.Component {
     }
 }
  
-export default withRouter(UserList);
+const mapStateToProps = (state) => {
+    return {
+        search: state.search
+    }
+}
+  
+const mapDispatchToProps = dispatch => {
+    return {}
+}
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(withRouter(UserList));
