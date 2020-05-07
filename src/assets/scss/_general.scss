@@ -2,7 +2,7 @@
 // Wrapper
 // ================== //
 .wrapper{
-    padding: 75px;
+    padding: 75px 0;
 
     .wrap-box{
         background-color: #ffffff;
@@ -11,6 +11,10 @@
         box-shadow: 0px 0px 30px rgba(62,14,136,0.12);
         padding: 50px;
         border-radius: 10px;
+
+        @media(max-width:920px){
+            padding: 30px;
+        }
     }
 }
 
@@ -56,6 +60,14 @@
     text-transform: capitalize;
     color: $color-content;
     position: relative;
+
+    @media(max-width:920px){
+        width: calc(100% / 2);
+    }
+
+    @media(max-width:420px){
+        width: 100%;
+    }
 
     &.single{
         border: 0;

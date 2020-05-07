@@ -1,8 +1,7 @@
 import { createStore, combineReducers } from 'redux';
 
 const userReducer = (state = {
-	keyword: null,
-	userDetail: null
+	keyword: null
 }, action) => {
 	switch(action.type){
 		case "UPDATE_KEYWORD" :
