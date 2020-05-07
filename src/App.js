@@ -11,9 +11,11 @@ function App() {
 	return (
 		<Provider store={store}>
 			<Router>
+				{/* ================ START WRAPPER ================ */}
 				<div className="wrapper">
 					<div className="container">
 						<div className="wrap-box">
+							{/* ================ START SWITCH ROUTE ================ */}
 							<Switch>
 								<Route exact path="/">
 									<InputSearch/>
@@ -30,9 +32,11 @@ function App() {
 									<Link to="/">Back</Link>
 								</Route>
 							</Switch>
+							{/* ================ END SWITCH ROUTE ================ */}
 						</div>
 					</div>
 				</div>
+				{/* ================ END WRAPPER ================ */}
 			</Router>
 		</Provider>
 	);

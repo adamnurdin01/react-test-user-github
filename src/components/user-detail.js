@@ -54,6 +54,7 @@ class UserDetail extends React.Component {
         let { user } = this.props.match.params;
         return (
             <div>
+                {/* ================= START TOOLS ================= */}
                 <div className="wrap-tools">
                     <div className="flex-fill">
                         <button className="btn-back" onClick={()=> this.props.history.push(`/`)}><i data-feather="arrow-left" className="icon"></i></button>
@@ -65,9 +66,14 @@ class UserDetail extends React.Component {
                         </div>
                     </div>
                 </div>
+                {/* ================= END TOOLS ================= */}
+                
                 {this.state.loading ? <Spinner /> : 
                     <div>
                         {this.state.data.length ? 
+                            // ============================== //
+                            // START LIST PROJECT
+                            // ============================== //
                             <div className="wrap-box-item">
                                 {this.state.data.map((x,i)=>(
                                     <div className="box-item pb-0 pl-0 pr-0" key={i}>

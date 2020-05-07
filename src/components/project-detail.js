@@ -51,9 +51,11 @@ class ProjectDetail extends Component {
     render() { 
         return (
             <div>
+                 {/* ================= START TOOLS ================= */}
                 <div className="wrap-tools">
                     <button className="btn-back" onClick={()=> this.props.history.push(`/detail/${this.state.user}`)}><i data-feather="arrow-left" className="icon"></i></button>
                 </div>
+                 {/* ================= END TOOLS ================= */}
                 {this.state.loading ? 
                     <Spinner /> 
                 : 
@@ -63,6 +65,9 @@ class ProjectDetail extends Component {
                                 <h6>OOps... file Not found</h6> 
                             </div>
                         : 
+                            // ============================== //
+                            // Render Markdown to HTML
+                            // ============================== //
                             <div className="content" dangerouslySetInnerHTML={{__html: this.state.htmlContent}}></div>
                         }
                     </div>
